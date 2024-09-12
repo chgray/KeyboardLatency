@@ -1,0 +1,39 @@
+﻿<Window x:Class="KeyboardLatency.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyboardLatency"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <MediaElement x:Name="RecordingMediaElement" Source="C:\Users\chgray\Downloads\IMG_4530.MP4" Grid.Row="1" Grid.Column="1" Grid.RowSpan="1" UnloadedBehavior="Manual"/>
+        <Slider x:Name="TimeSlider" ValueChanged="Slider_ValueChanged" Grid.Row="2" Grid.Column="1"/>
+        <StackPanel Grid.Row="1" Grid.Column="2" >
+            <Button Content="Load" Click="Load_Click"/>
+            <Button Content="Capture" Click="Button_Click"/>
+            <Button Content="Play" Click="Play_Click"/>
+        </StackPanel>
+        
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Set Trigger" Click="TriggerButtonClick"/>
+            <Button Content="Set Stop" Grid.Row="1" Click="SetStopClick"/>
+        </Grid>
+    </Grid>
+</Window>
